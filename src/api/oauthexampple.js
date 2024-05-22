@@ -1,6 +1,4 @@
-// Traer el método post de 'axios'
-import { post } from 'axios';
-
+import axios from 'axios';
 
 // Aqui deberas poner tu información del cliente, ya que es privada este solo es un archivo de ejemplo.
 const clientId = 'clientId';
@@ -17,7 +15,7 @@ function getToken() {
         headers: { 'Content-Type': 'multipart/form-data' },
         auth: { username: clientId, password: clientSecret }
     }
-    return post(API_URL, body, config);
+    return axios.post(API_URL, body, config);
 }
 
 export { getToken };
