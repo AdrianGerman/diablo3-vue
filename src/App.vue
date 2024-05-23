@@ -4,16 +4,17 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style lang="stylus">
 #app
-  font-family Avenir, Helvetica, Arial, sans-serif
+  padding 60px 0
+  font-family 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+  color #ffffff
+  background-color #15202b
   text-align center
-  color #2c3e50
-  margin-top 60px
 </style>
