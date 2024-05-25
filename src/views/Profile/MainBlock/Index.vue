@@ -1,7 +1,7 @@
 <template>
   <div class="grid-container">
     <div class="grid-item item-left">
-      <h1>Izquierda</h1>
+      <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
     </div>
     <div class="grid-item grid-right">
       <h1>Derecha</h1>
@@ -10,12 +10,22 @@
 </template>
 
 <script>
+import TopHeroes from './TopHeroes/Index'
 export default {
   name: 'MainBlock',
+  components: { TopHeroes },
   props: {
     profileData: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    hasHeroes() {
+      return this.profileData.heroes.length > 0
+    },
+    topHeroes() {
+      return this.profileData.heroes.slice(0, 3)
     }
   }
 }
