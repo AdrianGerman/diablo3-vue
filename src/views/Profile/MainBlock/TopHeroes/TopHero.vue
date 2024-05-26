@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-portrait-wrapper mb-5 mb-sm-0">
+    <div class="hero-portrait-wrapper mb-5 mb-sm-0 hover-cursor-pointer" @click="goToHero(hero.id)">
         <div class="bg-secondary d-flex justify-content-center p-3 p-sm-0">
             <div :class="heroClass"></div>
         </div>
@@ -20,8 +20,10 @@
 </template>
 
 <script>
+import goToHero from '@/mixins/goToHero'
 export default {
     name: 'TopHero',
+    mixins: [goToHero],
     props: {
         hero: {
             type: Object,
