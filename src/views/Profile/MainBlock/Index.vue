@@ -2,12 +2,12 @@
   <div class="grid-container">
     <div class="grid-item item-left">
       <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
-
       <HeroesList v-if="hasHeroesList" :heroes="heroesList" />
-
       <ProgressList :acts="profileData.progression" />
     </div>
-    <div class="grid-item grid-right">
+
+    <!-- Right Bar-->
+    <div class="grid-item item-right">
       <PlayerStats :stats="statsData" />
     </div>
   </div>
