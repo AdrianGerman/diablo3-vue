@@ -1,21 +1,40 @@
 <template>
     <div class="hero-view">
-        <BaseLoading v-if="isLoading" />
+        <BaseLoading v-if="isLoadingHero" />
         <HeroDetailHeader v-if="hero" :detail="detailHeader" />
+        <b-row>
+            <b-col md="12" lg="8" order-lg="2">
+                <BaseLoading v-if="isLoadingItems" />
+            </b-col>
+            <b-col md="12" lg="4" order-lg="1">
+                <template v-if="hero">
+                    <HeroAttributes :attributes="detailStats" />
+                    <HeroSkills :skills="hero.skills" />
+                </template>
+            </b-col>
+        </b-row>
     </div>
 </template>
+
 
 <script>
 import setError from '@/mixins/setError'
 import BaseLoading from '@/components/BaseLoading'
 import HeroDetailHeader from './HeroDetailHeader'
 import { getApiHero, getApiDetailedHeroItems } from '@/api/search'
+import HeroAttributes from './HeroAttributes/Index'
+// import HeroItems from './HeroItems/Index'
 
 
 export default {
     name: 'HeroView',
     mixins: [setError],
-    components: { BaseLoading, HeroDetailHeader },
+    components: {
+        BaseLoading,
+        HeroDetailHeader,
+        HeroAttributes,
+        // HeroSkills
+    },
     data() {
         return {
             isLoadingHero: false,
@@ -25,6 +44,9 @@ export default {
         }
     },
     computed: {
+        detailStats() {
+            return { ...this.hero.stats, classSlug: this.hero.class }
+        },
         detailHeader() {
             const {
                 name,
