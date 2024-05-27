@@ -23,6 +23,7 @@ import BaseLoading from '@/components/BaseLoading'
 import HeroDetailHeader from './HeroDetailHeader'
 import { getApiHero, getApiDetailedHeroItems } from '@/api/search'
 import HeroAttributes from './HeroAttributes/Index'
+import HeroSkills from './HeroSkills/Index'
 // import HeroItems from './HeroItems/Index'
 
 
@@ -33,7 +34,7 @@ export default {
         BaseLoading,
         HeroDetailHeader,
         HeroAttributes,
-        // HeroSkills
+        HeroSkills
     },
     data() {
         return {
