@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Aqui deberas poner tu información del cliente, ya que es privada este solo es un archivo de ejemplo.
-const clientId = 'clientId';
-const clientSecret = 'clientSecret';
+
+const clientId = process.env.VUE_APP_CLIENT_ID;
+const clientSecret = process.env.VUE_APP_CLIENT_SECRET;
 
 // API URL para hacer oauth
 const region = 'eu';
