@@ -8,7 +8,9 @@
             <b-nav-item :active="isPassiveSkillsActive" @click="changeComponent('PassiveSkills')">Passive</b-nav-item>
         </b-nav>
 
-        <component :is="activeComponent" :skills="componentProps" />
+        <keep-alive>
+            <component :is="activeComponent" :skills="componentProps" />
+        </keep-alive>
 
     </div>
 </template>
