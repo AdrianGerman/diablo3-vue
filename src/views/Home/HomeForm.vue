@@ -7,7 +7,7 @@
 
                     <b-form-group id="input-group-1" label="BattleTag:" label-for="input-text"
                         description="Format: YourProfile#1234">
-                        <b-form-input id="input-text" v-model="form.battleTag" type="text" size="lg" required
+                        <b-form-input v-focus id="input-text" v-model="form.battleTag" type="text" size="lg" required
                             placeholder="BattleTag" />
                     </b-form-group>
 
